@@ -64,7 +64,7 @@ public class Base_Test {
 		
 		//open url
 		driver.get(url);
-		logger.info("URL opened");
+		logger.info("URL launched");
 		
 		//Mazimize current window
 		driver.manage().window().maximize();
@@ -74,11 +74,11 @@ public class Base_Test {
 		Thread.sleep(5000);
 }
 
-	@AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+//	@AfterClass
+//    public void tearDown() {
+//        if (driver != null) {
+//            driver.quit();
+//        }
+//    }
 
 }

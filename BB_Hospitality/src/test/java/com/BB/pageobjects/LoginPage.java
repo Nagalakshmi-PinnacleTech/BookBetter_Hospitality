@@ -27,24 +27,23 @@ public class LoginPage {
 //identify webelements
 
 	
-		//Already registered users
-		@FindBy(xpath = "//input[@id='email']") 
-		WebElement registeredUsersEmail;
-		
-		@FindBy(xpath = "//input[@type='password']") 
-		WebElement registeredUsersPwd;
-		
-		@FindBy(xpath = "//button[@class='_primary_1sag5_1 _btnBlack_1sag5_327 _btnLogin_1hjy5_91']")
-		WebElement submitLogin;
-		
-		//identify action on webelement
-		//ACTIONS METHODS FOR ALREADY REGISTERED USERS
+//Already registered users
+@FindBy(xpath = "//input[@id='email']") 
+WebElement registeredUsersEmail;
 
+@FindBy(xpath = "//input[@type='password']") 
+WebElement registeredUsersPwd;
 
-    public void login(String user, String pass) throws InterruptedException {
-    	registeredUsersEmail.sendKeys(user);
-    	registeredUsersPwd.sendKeys(pass);
-    	Thread.sleep(5000);
-    	submitLogin.click();
+@FindBy(xpath = "//button[@class='_primary_1sag5_1 _btnBlack_1sag5_327 _btnLogin_1hjy5_91']")
+WebElement submitLogin;
+
+//identify action on webelement
+
+public void login(String user, String pass) throws InterruptedException {
+	registeredUsersEmail.sendKeys(user);
+	registeredUsersPwd.sendKeys(pass);
+	Thread.sleep(2000);
+	submitLogin.click();
+	Thread.sleep(2000);
 }
-}
+	}

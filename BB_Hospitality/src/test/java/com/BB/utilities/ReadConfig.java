@@ -7,7 +7,7 @@ public class ReadConfig {
 	
 	Properties properties;
 
-	String path = "D:\\PinnacleAutomation\\Book_Better_Hospitality\\BB_Hospitality\\src\\test\\resources\\config.properties";
+	String path = "D:\\PinnacleAutomation\\BookBetter_Hospitality\\BB_Hospitality\\src\\test\\resources\\config.properties";
 
 	//constructor
 	public ReadConfig() {
@@ -21,9 +21,8 @@ public class ReadConfig {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-
-	}
+}
+	
 	public String getBaseUrl()
 	{
 		String value = properties.getProperty("baseUrl");
