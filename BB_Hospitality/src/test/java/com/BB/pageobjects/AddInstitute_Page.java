@@ -1,7 +1,6 @@
 package com.BB.pageobjects;
 
 import java.time.Duration;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -73,20 +72,20 @@ public void template() throws InterruptedException
 {
 	Actions action = new Actions(driver);
 	action.moveToElement(template).click().build().perform();
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 	Actions keyDown = new Actions(driver); 
 	keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 }
 
 public void pricingplan() throws InterruptedException 
 {
 	Actions action = new Actions(driver);
 	action.moveToElement(selectplan).click().build().perform();
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 	Actions keyDown = new Actions(driver); 
 	keyDown.sendKeys(Keys.chord(Keys.ENTER)).perform();
-	Thread.sleep(3000);
+	Thread.sleep(2000);
 	save_btn.click();
 }
    

@@ -2,18 +2,20 @@ package com.BB.testcases;
 
 import java.io.IOException;
 import org.testng.annotations.Test;
+
 import com.BB.base.Base_Test;
-import com.BB.pageobjects.AddInstitute_Page;
+import com.BB.pageobjects.AddUser_Page;
 import com.BB.pageobjects.LoginPage;
 import com.BB.pageobjects.WelcomePage;
 import org.apache.commons.logging.Log;
 import org.testng.Assert;
 import com.BB.utilities.ReadConfig;
 
-public class AddInstitute_Test extends Base_Test {
+
+public class AddUser_Test extends Base_Test{
 	
 	@Test
-	public void AddInstitute() throws IOException, InterruptedException 
+	public void AddUser() throws IOException, InterruptedException 
 	{
 
 		logger.info("***************TestCase Verify Login starts*****************"); 
@@ -28,10 +30,11 @@ public class AddInstitute_Test extends Base_Test {
 		loginpg.login("test123@gmail.com","Pinnacle@123");
 		logger.info("login successful");
 		
-		AddInstitute_Page addIns = new AddInstitute_Page(driver);
-		addIns.all_Institute_pop();
-		addIns.fill_inst_detail("AutoInstitute1", "9988776666", "autoInst1@gmail.co.in", "Banglore", "with Basic plan");
-		addIns.template();
-		addIns.pricingplan();
+		AddUser_Page adduser = new AddUser_Page(driver);
+		adduser.add_user_pop();
+		adduser.institute_role();
+		adduser.fill_user_detail("user_test1", "userTest1@gmail.com", "Udupi", "8877665554");
+		
+		}	
+
 }
-	}
