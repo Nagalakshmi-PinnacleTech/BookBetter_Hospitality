@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
@@ -38,6 +39,8 @@ public class Base_Test {
 		switch(browser.toLowerCase())
 		{
 		case "chrome":
+//			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("start-maximized"); // or "window-size=1920,1080"
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			break;
