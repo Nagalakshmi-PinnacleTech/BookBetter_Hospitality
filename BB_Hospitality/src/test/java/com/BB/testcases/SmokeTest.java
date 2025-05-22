@@ -28,8 +28,8 @@ public class SmokeTest extends Base_Test{
 		logger.info("login successful");
 		
 		SmokePage smoke = new SmokePage(driver);
-		smoke.smoke();
-		
+//		smoke.smoke();
+		smoke.profile();
 
 	}
 

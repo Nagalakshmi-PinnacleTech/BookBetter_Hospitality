@@ -1,11 +1,14 @@
 package com.BB.pageobjects;
 
 import java.time.Duration;
+import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SmokePage {
@@ -50,6 +53,11 @@ public class SmokePage {
 	@FindBy(css = "div[class='reactSel__control css-1e42tsx-control'] div[class='reactSel__indicator reactSel__dropdown-indicator css-1w5oz2q-indicatorContainer'] svg path")
 	WebElement cal_dd;
 	
+	
+	
+	@FindBy(xpath = "//div[@class='profile-letter flex-center']")
+	WebElement profile_dd;
+	
 	//identify action on webelement
 	public void login(String user, String pass) throws InterruptedException {
 		registeredUsersEmail.sendKeys(user);
@@ -67,5 +75,15 @@ public class SmokePage {
 		calendar.click();
 		tab_arrow.click();
 	}
+	
+	public void profile() throws InterruptedException {
+	    List<WebElement> buttons = driver.findElements(By.xpath("(//div[@class='flex-center undefined '])[14]"));
+	    for (int i = 0; i < buttons.size(); i++) {
+	        new WebDriverWait(driver, Duration.ofSeconds(10))
+	            .until(ExpectedConditions.elementToBeClickable(buttons.get(i)))
+	            .click();
+		    }
+	}
 }
+
 	
