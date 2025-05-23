@@ -6,10 +6,9 @@ import org.testng.annotations.Test;
 
 import com.BB.base.Base_Test;
 import com.BB.pageobjects.LoginPage;
-import com.BB.pageobjects.SmokePage;
 import com.BB.pageobjects.WelcomePage;
 
-public class SmokeTest extends Base_Test{
+public class AddBooking_Test extends Base_Test{
 	
 	@Test
 	public void VerifyLogin() throws IOException, InterruptedException 
@@ -25,12 +24,6 @@ public class SmokeTest extends Base_Test{
 
 		loginpg.login("kiwajo3927@deusa7.com","123456789");
 		logger.info("login successful");
-		
-		SmokePage smoke = new SmokePage(driver);
-		smoke.smoke();
-		smoke.profileSection();
-		smoke.all_reports();
-		smoke.all_settings();
-	}
 
+}
 }
