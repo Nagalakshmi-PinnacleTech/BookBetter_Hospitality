@@ -59,8 +59,8 @@ public class Base_Test {
 			break;
 		}
 
-		//implicit wait of 10 secs
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		//implicit wait of 20 secs
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
 		//for logging
 		logger = LogManager.getLogger("BB_hospitality");
