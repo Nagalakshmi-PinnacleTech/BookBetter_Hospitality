@@ -10,7 +10,6 @@ import com.BB.pageobjects.WelcomePage;
 import org.testng.annotations.Test;
 import com.BB.utilities.ReadConfig;
 
-
 public class LoginTest extends Base_Test{
 	
 	@Test
@@ -26,7 +25,7 @@ public class LoginTest extends Base_Test{
 
 		LoginPage loginpg = new LoginPage(driver);
 
-		loginpg.login("test123@gmail.com","Pinnacle@123");
+		loginpg.login("kiwajo3927@deusa7.com","123456789");
 		logger.info("login successful");
 
 	}

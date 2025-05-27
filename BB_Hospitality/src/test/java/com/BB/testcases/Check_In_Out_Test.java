@@ -5,14 +5,15 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import com.BB.base.Base_Test;
-import com.BB.pageobjects.AddBooking_Page;
+import com.BB.pageobjects.AddPayment_Page;
+import com.BB.pageobjects.CheckInOut_Page;
 import com.BB.pageobjects.LoginPage;
 import com.BB.pageobjects.WelcomePage;
 
-public class AddBooking_Test extends Base_Test{
+public class Check_In_Out_Test extends Base_Test{
 	
 	@Test
-	public void addBooking() throws IOException, InterruptedException 
+	public void check_in_out() throws IOException, InterruptedException 
 	{
 		logger.info("***************TestCase Verify Login starts*****************"); 
 
@@ -26,11 +27,12 @@ public class AddBooking_Test extends Base_Test{
 		loginpg.login("kiwajo3927@deusa7.com","123456789");
 		logger.info("login successful");
 		
-		AddBooking_Page addbook = new AddBooking_Page(driver);
-		addbook.sel_date();
-		addbook.select_time24();
-		addbook.sel_fromHour();
-		addbook.Cust_detail("CustomerTest", "custTest@gmail.com", "Mysore", "7766558899");
-		logger.info("Booking successful");
-	}
+		AddPayment_Page addpay = new AddPayment_Page(driver);
+		addpay.scroll_selectBooking();
+		
+		CheckInOut_Page checkinout = new CheckInOut_Page(driver);
+		checkinout.checkIn();
+		checkinout.checkOut();
+
+}
 }

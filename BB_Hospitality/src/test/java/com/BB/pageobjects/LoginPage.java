@@ -20,13 +20,11 @@ public class LoginPage {
  
  public LoginPage(WebDriver driver) {
      this.driver = driver;
-     this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+     this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
      PageFactory.initElements(driver, this);
  }
  
-//identify webelements
-
-	
+//identify webelements	
 //Already registered users
 @FindBy(xpath = "//input[@id='email']") 
 WebElement registeredUsersEmail;
@@ -44,6 +42,6 @@ public void login(String user, String pass) throws InterruptedException {
 	registeredUsersPwd.sendKeys(pass);
 	Thread.sleep(2000);
 	submitLogin.click();
-	Thread.sleep(2000);
+	Thread.sleep(8000);
 }
 	}

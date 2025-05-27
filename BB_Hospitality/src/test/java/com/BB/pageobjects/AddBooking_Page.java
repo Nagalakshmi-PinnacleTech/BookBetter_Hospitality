@@ -2,6 +2,7 @@ package com.BB.pageobjects;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -25,10 +26,10 @@ public class AddBooking_Page {
 	
 	//identify webelements
 	
-	@FindBy(xpath = "//div[contains(@class,'flex-center _pickerIcon_5g93c_41')]//*[name()='svg']") 
+	@FindBy(xpath = "/html[1]/body[1]/div[5]/div[1]/main[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]") 
 	WebElement calendar_popup; 
-	@FindBy(xpath = "//div[@class='rdrMonths rdrMonthsHorizontal']//span[contains(text(),'24')]") 
-	WebElement date_24; 
+	@FindBy(xpath = "//div[contains(@class,'rdrMonths rdrMonthsHorizontal')]//span[contains(text(),'31')]") 
+	WebElement date_27; 
 	@FindBy(xpath = "//button[normalize-space()='Select']") 
 	WebElement select_btn; 
 	@FindBy(xpath = "//div[@class='reactSel__control css-1h7uovc-control']//div[@class='reactSel__indicator reactSel__dropdown-indicator css-1w5oz2q-indicatorContainer']//*[name()='svg']") 
@@ -38,7 +39,7 @@ public class AddBooking_Page {
 //	@FindBy(xpath = "(//div[@class='MuiClock-wrapper css-1b5m8nj']/child::span[@class='MuiClockNumber-root css-1db5svu'])[1]") 
 	@FindBy(xpath = "//div[@class='MuiClock-squareMask css-6oh4ak']")
 	WebElement One_clock;
-	@FindBy(xpath = "(//button[@class='_secondary_hwibs_61 false \'])[2]") 
+	@FindBy(xpath = "//button[normalize-space()='Done']") 
 	WebElement clock_done; 
 	@FindBy(xpath = "(//div[@class='flex-center _checkboxInput_e5au6_17 false '])[1]") 
 	WebElement first_room; 
@@ -59,15 +60,21 @@ public class AddBooking_Page {
 	WebElement cust_save;
 	@FindBy(xpath = "//button[normalize-space()='Confirm']") 
 	WebElement confirm_btn;
-	
-	
-	
+
 	//identify action on webelement
 
 	public void sel_date() throws InterruptedException {
 		calendar_popup.click();
-		date_24.click();
-		date_24.click();
+//		JavascriptExecutor js = (JavascriptExecutor) driver;
+//		js.executeScript("arguments[0].click()", calendar_popup);
+		Thread.sleep(2000);
+//		for (int i = 0; i < 2; i++) {
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(date_27));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].click();", date_27);
+//		}
+		date_27.click();
+		date_27.click();
 		select_btn.click();
 	}
 	
@@ -88,8 +95,7 @@ public class AddBooking_Page {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(One_clock));
 		One_clock.click();
-//		One_clock.click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		clock_done.click();
 		Thread.sleep(1000);
 		first_room.click();
