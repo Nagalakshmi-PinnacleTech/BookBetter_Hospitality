@@ -15,7 +15,7 @@ public class Notification_Page {
  private WebDriver driver;
  private WebDriverWait wait;
 	 
-	//constructor
+//constructor
 	 
  public Notification_Page(WebDriver driver) {
      this.driver = driver;
